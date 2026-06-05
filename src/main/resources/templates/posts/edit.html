@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-      layout:decorate="layout/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
 <head>
     <title layout:fragment="title">Edit Post</title>
 </head>
 
+<body>
 <main layout:fragment="content">
     <h1>Edit Post</h1>
     <form th:action="@{/posts/{id}(id=${post.id})}" method="post">
@@ -21,4 +22,5 @@
         <a th:href="@{/posts/{id}(id=${post.id})}" class="btn btn-secondary">Cancel</a>
     </form>
 </main>
+</body>
 </html>

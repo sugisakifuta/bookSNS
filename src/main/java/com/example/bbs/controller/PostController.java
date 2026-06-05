@@ -69,9 +69,5 @@ public class PostController {
         postService.deleteById(id);
         return "redirect:/posts";
     }
-    @GetMapping("/")
-    public String redirectToPosts() {
-    return "redirect:/posts";
-    }
     
 }

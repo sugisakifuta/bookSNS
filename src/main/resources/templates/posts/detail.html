@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
-      layout:decorate="layout/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/layout}">
 <head>
     <title layout:fragment="title">Post Datail</title>
 </head>
 
+<body>
 <main layout:fragment="content">
     <h1 th:text="${post.title}"></h1>
     <p th:text="${post.content}"></p>
@@ -14,4 +15,5 @@
     <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" style="display: inline;">
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
+</body>
 </main>
