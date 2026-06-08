@@ -8,9 +8,14 @@
 
 <body>
 <main layout:fragment="content">
-    <h1 th:text="${post.title}"></h1>
-    <p th:text="${post.content}"></p>
-    <a th:href="@{/posts}" class="btn btn-secondary">Back To List</a>
+    <h1>本のタイトル:</h1><h1 th:text="${post.title}"></h1>
+    <p>著者名:</p><p th:text="${post.authors_name}"></p>
+    <p>出版社:</p><p th:text="${post.publishing_company}"></p>
+    <p>出版年:</p><p th:text="${post.publishing_year}"></p>
+    <p>感想:</p><p th:text="${post.content}"></p>
+    <p>投稿日:</p><p th:text="${#temporals.format(post.createdAt, 'yyyy-MM-dd')}"></p>
+
+    <a th:href="@{/posts}" class="btn btn-secondary">リストに戻る</a>
     <a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-primary">Edit</a>
     <form th:action="@{/posts/{id}/delete(id=${post.id})}" method="post" style="display: inline;">
         <button type="submit" class="btn btn-danger">Delete</button>
