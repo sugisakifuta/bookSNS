@@ -2,6 +2,8 @@ package com.example.bbs.controller;
 
 import com.example.bbs.model.Post;
 import com.example.bbs.service.PostService;
+//import com.example.bbs.service.LikeService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/posts")
 public class PostController {
     private final PostService postService;
+    //private final UserService userService; // ユーザーサービスを追加
 
     public PostController(PostService postService) {
         this.postService = postService;
